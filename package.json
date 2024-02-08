@@ -14,8 +14,9 @@
   "contributes": {
     "commands": [
       {
-        "command": "sprig.helloWorld",
-        "title": "Hello World"
+        "command": "sprig.open",
+        "title": "Open Sprig game panel",
+        "when": "editorLangId == javascript"
       }
     ]
   },
