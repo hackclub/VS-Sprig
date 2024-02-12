@@ -4,6 +4,7 @@
   "description": "Develop your Sprig game in VS Code!",
   "version": "1.0.0",
   "license": "SEE LICENSE IN LICENSE",
+  "repository": "https://github.com/hackclub/VS-Sprig",
   "engines": {
     "vscode": "^1.86.0"
   },
