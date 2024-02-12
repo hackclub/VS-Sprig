@@ -1,14 +1,16 @@
 {
-  "name": "sprig",
-  "displayName": "Sprig",
+  "name": "vs-sprig",
+  "displayName": "VS Sprig",
   "description": "Develop your Sprig game in VS Code!",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE",
   "engines": {
     "vscode": "^1.86.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "vs-sprig.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
