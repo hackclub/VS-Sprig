@@ -10,7 +10,7 @@
   "categories": [
     "Other"
   ],
-  "icon": "vs-sprig.png",
+  "icon": "images/vs-sprig.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {

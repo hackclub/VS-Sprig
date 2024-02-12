@@ -24,6 +24,9 @@ export function activate(context: vscode.ExtensionContext) {
           enableScripts: true,
         }
       );
+      panel.iconPath = vscode.Uri.file(
+        context.asAbsolutePath("images/sprig.png")
+      );
 
       const gameCode = editor.document.getText();
       sprigFilename = editor.document.fileName;
