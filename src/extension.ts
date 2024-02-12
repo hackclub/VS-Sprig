@@ -115,27 +115,51 @@ function getWebviewContent(gameCode: string) {
           overflow-anchor: auto;
           height: 1px;
         }
+
+        #actions {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        button {
+          font-family: sans-serif;
+          font-size: 16px;
+          padding: 8px 20px;
+          margin: 0 10px;
+          background-color: #078969;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s;
+          border-radius: 5px;
+        }
       </style>
     </head>
     <body>
       <h2>Game</h2>
       <canvas width="500" height="400" id="canvas" tabindex="0"></canvas>
+      <div id="actions">
+        <button id="restart">Restart</button>
+        <button id="stop">Stop</button>
+      </div>
       <h2>Console</h2>
       <p id="output">
         <div id="anchor"></div>
       </p>
 
       <script type="module">
-        import { webEngine } from "https://esm.sh/sprig@1/web"
+        import { webEngine } from "https://esm.sh/sprig@1/web";
 
         function _addConsoleOutput() {
-          const output = document.getElementById("output")
-          const text = Array.from(arguments).join(" ")
-          output.innerText += text + "\\n"
-        }
+          const output = document.getElementById("output");
+          const text = Array.from(arguments).join(" ");
+          output.innerText += text + "\\n";
+        };
 
-        console.log = _addConsoleOutput
-        console.error = _addConsoleOutput
+        console.log = _addConsoleOutput;
+        console.error = _addConsoleOutput;
       
         const runGame = (api) => {
           const {
@@ -146,10 +170,20 @@ function getWebviewContent(gameCode: string) {
           } = api
           // game starts here
           ${gameCode}
-        }
+        };
       
-        const game = webEngine(document.getElementById("canvas"))
-        runGame(game.api)
+        let game = webEngine(document.getElementById("canvas"));
+        runGame(game.api);
+
+        document.getElementById("restart").addEventListener("click", async () => {
+          game.cleanup();
+          game = webEngine(document.getElementById("canvas"))
+          runGame(game.api);
+        });
+
+        document.getElementById("stop").addEventListener("click", () => {
+          game.cleanup();
+        });
       </script>
     </body>
   </html>`;
