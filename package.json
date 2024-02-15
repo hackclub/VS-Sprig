@@ -8,6 +8,7 @@
   "engines": {
     "vscode": "^1.86.0"
   },
+  "publisher": "polypixeldev",
   "categories": [
     "Other"
   ],
