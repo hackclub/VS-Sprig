@@ -2,7 +2,7 @@
   "name": "vs-sprig",
   "displayName": "VS Sprig",
   "description": "Develop your Sprig game in VS Code!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "repository": "https://github.com/hackclub/VS-Sprig",
   "engines": {
